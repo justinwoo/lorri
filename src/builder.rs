@@ -35,6 +35,7 @@ pub fn run(root_nix_file: &NixFile, cas: &ContentAddressable) -> Result<Info, Er
 
     let logged_evaluation_nix = cas.file_from_string(include_str!("./logged-evaluation.nix"))?;
 
+    // TODO: only instantiate here, then use CallOpts for the build
     cmd.args(&[
         OsStr::new("-vv"),
         OsStr::new("--no-out-link"),

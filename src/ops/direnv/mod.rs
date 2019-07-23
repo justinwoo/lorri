@@ -30,6 +30,7 @@ pub fn main(project: Project) -> OpResult {
         eprintln!("Uh oh, your lorri daemon is not running.");
     }
 
+    // TODO: this should check whether the daemon is running!
     if !shell_root.exists() {
         return Err(ExitError::errmsg(
             "Please start `lorri daemon` or run `lorri watch` before using direnv integration.",
